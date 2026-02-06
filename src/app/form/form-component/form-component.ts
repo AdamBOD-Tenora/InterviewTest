@@ -8,6 +8,8 @@ import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angula
   styleUrl: './form-component.scss',
 })
 export class FormComponent {
+  initialCountryValue = "GB";
+
   beneficiaryForm = new FormGroup({
     name: new FormControl('', Validators.required), //Validation: max 50 chars, non-numeric
     lastName: new FormControl('', Validators.required), //Validation: max 150 chars, non-numeric, allow symbols

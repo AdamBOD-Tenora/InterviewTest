@@ -1,0 +1,53 @@
+<form [formGroup]="beneficiaryForm" (ngSubmit)="onSubmit()" class="beneficiary-form">
+  <h2>Beneficiary Details</h2>
+
+  <fieldset>
+    <legend>Personal Information</legend>
+
+    <div class="form-row">
+      <div class="form-field">
+        <label for="name">Name</label>
+        <input id="name" type="text" formControlName="name" placeholder="e.g. John" />
+      </div>
+
+      <div class="form-field">
+        <label for="lastName">Last Name</label>
+        <input id="lastName" type="text" formControlName="lastName" placeholder="e.g. Smith" />
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label for="country">Country</label>
+      <input id="country" type="text" formControlName="country" placeholder="e.g. GB" />
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Bank Details</legend>
+
+    <div class="form-field">
+      <label for="bankName">Bank Name</label>
+      <input id="bankName" type="text" formControlName="bankName" placeholder="e.g. Barclays" />
+    </div>
+
+    <div class="form-row">
+      <div class="form-field">
+        <label for="bankAccountNumber">Account Number</label>
+        <input
+          id="bankAccountNumber"
+          type="text"
+          formControlName="bankAccountNumber"
+          placeholder="e.g. 12345678"
+        />
+      </div>
+
+      <div class="form-field">
+        <label for="sortCode">Sort Code</label>
+        <input id="sortCode" type="text" formControlName="sortCode" placeholder="e.g. 12-34-56" />
+      </div>
+    </div>
+  </fieldset>
+
+  <!-- Explain how you would make styled buttons reusable across the application -->
+  <button type="submit" [disabled]="beneficiaryForm.invalid">Submit</button>
+</form>
